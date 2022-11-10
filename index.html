@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Color</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        body{
+            margin: 0%;
+            padding: 0%;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        button{
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            font-size: 1.5em;
+            border: 5px solid black;
+            background: none;
+            cursor: pointer;
+            color: white;
+            transform: translate(50%, -50%);
+
+
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Random Backgroung Color</h1>
+    <button id = 'btn'>Click Me</button>
+    <script defer>
+        const button = document.getElementById('btn');
+        const body = document.querySelector('body');
+        const color=["red", "green", "orange", "blue", "pink", "yellow"];
+        body.style.backgroundColor = "black";
+        button.addEventListener('click', ()=>{
+            const colorIndex = parseInt(Math.random()*color.length);
+            const butcolorIndex = parseInt(Math.random()*color.length);
+            body.style.backgroundColor = color[colorIndex];
+            button.style.borderColor = color[butcolorIndex];
+            body.style.transition='.2s linear'
+
+        });
+    </script>
+    
+</body>
+</html>
